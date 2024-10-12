@@ -34,6 +34,8 @@ public class GoogleExample {
 
             // Fecha o navegador
             browser.close();
+        }  catch (Exception e) {
+            System.err.println("Erro! (;-;)");
         }
     }
 }

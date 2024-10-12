@@ -28,13 +28,15 @@ public class WindyExample {
             // Aguarda o mapa se reposicionar com a nova localização
             page.waitForTimeout(5000); // Espera 5 segundos para garantir que o mapa se reposicione
 
-            // Tira uma captura de tela
+            // Tira um print da tela
             page.screenshot(new Page.ScreenshotOptions()
                     .setPath(Paths.get("./src/main/resources/img/windy_screenshot.png"))
-                    .setFullPage(true)); // Captura da página inteira
+                    .setFullPage(true)); // Print da página inteira
 
             // Fecha o navegador
             browser.close();
+        }  catch (Exception e) {
+            System.err.println("Erro! (;-;)");
         }
     }
 }

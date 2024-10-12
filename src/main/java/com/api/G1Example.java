@@ -15,20 +15,21 @@ public class G1Example {
                     .setRecordVideoDir(Paths.get("./src/main/resources/videos/")) // Define o diretório para salvar os vídeos
                     .setRecordVideoSize(1280, 720)); // Define a resolução do vídeo
 
-            // Cria uma nova página dentro do contexto
+            // Cria uma nova página
             Page page = context.newPage();
 
             // Acessa o Google
             page.navigate("https://www.google.com");
 
-            // Realiza uma busca no Google
+            // Realiza a busca no Google
             page.locator("[name='q']").fill("g1");
             page.locator("[name='q']").press("Enter");
 
-            // Espera alguns segundos e clica no primeiro resultado
+            // Espera os resultados carregarem e clica no primeiro resultado
             page.waitForSelector("h3");
             page.locator("h3").first().click();
 
+            // Preenche a barra de busca do G1
             page.locator("[name='q']").fill("enel"); // Contexto: temporais em SP
             page.locator("[name='q']").press("Enter");
 
@@ -48,6 +49,8 @@ public class G1Example {
 
             // Fecha o navegador
             browser.close();
+        } catch (Exception e) {
+            System.err.println("Erro! (;-;)");
         }
     }
 }
